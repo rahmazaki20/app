@@ -1,0 +1,110 @@
+        <div class="col-md-4">
+            <div
+                class="tw-p-5 md:tw-p-6 tw-mb-4 tw-rounded-2xl tw-transition-all tw-duration-200 tw-bg-white tw-shadow-sm tw-ring-1 tw-ring-gray-200">
+                <div class="tw-flex tw-flex-col tw-gap-4 tw-dw-rounded-box tw-dw-p-6 tw-dw-max-w-md">
+                    <div class="tw-flex tw-items-center tw-flex-col">
+                        <h1 class="tw-text-lg md:tw-text-xl tw-font-semibold tw-text-[#1e1e1e]">
+                            @lang('lang_v1.welcome_back')
+                        </h1>
+                        <h2 class="tw-text-sm tw-font-medium tw-text-gray-500">
+                            @lang('lang_v1.login_to_your') {{ config('app.name', 'ultimatePOS') }}
+                        </h2>
+                    </div>
+
+                    <form method="POST" action="{{ route('login') }}" id="login-form">
+                        {{ csrf_field() }}
+                        <div class="form-group has-feedback {{ $errors->has('username') ? ' has-error' : '' }}">
+                            <label class="tw-dw-form-control">
+                                <div class="tw-dw-label">
+                                    <span
+                                        class="tw-text-xs md:tw-text-sm tw-font-medium tw-text-black">@lang('Username')</span>
+                                </div>
+
+                                <input
+                                    class="tw-border tw-border-[#D1D5DA] tw-outline-none tw-h-12 tw-bg-transparent tw-rounded-lg tw-px-3 tw-font-medium tw-text-black placeholder:tw-text-gray-500 placeholder:tw-font-medium"
+                                    name="username" required autofocus placeholder="@lang('lang_v1.username')"
+                                    data-last-active-input="" id="username" type="text" name="username"
+                                    value="{{ $username }}" />
+                                @if ($errors->has('username'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                @endif
+                            </label>
+                        </div>
+
+                        <div class="form-group has-feedback {{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label class="tw-dw-form-control">
+                                <div class="tw-dw-label">
+                                    <span
+                                        class="tw-text-xs md:tw-text-sm tw-font-medium tw-text-black">@lang('Password')</span>
+                                    @if (config('app.env') != 'demo')
+                                        <a href="{{ route('password.request') }}"
+                                            class="tw-text-xs md:tw-text-sm tw-font-medium tw-bg-gradient-to-r tw-from-indigo-500 tw-to-blue-500 tw-inline-block tw-text-transparent tw-bg-clip-text hover:tw-text-[#467BF5]"
+                                            tabindex="-1">@lang('lang_v1.forgot_your_password')</a>
+                                    @endif
+                                </div>
+
+                                <input
+                                    class="tw-border tw-border-[#D1D5DA] tw-outline-none tw-h-12 tw-bg-transparent tw-rounded-lg tw-px-3 tw-font-medium tw-text-black placeholder:tw-text-gray-500 placeholder:tw-font-medium"
+                                    id="password" type="password" name="password" value="{{ $password }}" required
+                                    placeholder="@lang('lang_v1.password')" />
+                                <button type="button" id="show_hide_icon" class="show_hide_icon"
+                                    style="position: absolute; top:48px;right:5px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-eye tw-w-6" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                                        <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+                                    </svg>
+                                </button>
+                            </label>
+                            @if ($errors->has('password'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+
+
+                        <div class="tw-dw-form-control">
+                            <label class="tw-dw-cursor-pointer tw-dw-label tw-self-start tw-gap-2">
+                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}
+                                    class="tw-dw-checkbox">
+                                <span
+                                    class="tw-text-xs md:tw-text-sm tw-font-medium tw-text-black tw-mt-[0.2rem]">@lang('lang_v1.remember_me')</span>
+                            </label>
+                        </div>
+                        @if(config('constants.enable_recaptcha'))
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="g-recaptcha" data-sitekey="{{ config('constants.google_recaptcha_key') }}"></div>
+                                        @if ($errors->has('g-recaptcha-response'))
+                                            <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                                        @endif
+                                </div>  
+                            </div>
+                        </div>
+                        @endif
+                        <button type="submit"
+                            class="tw-bg-gradient-to-r tw-from-indigo-500 tw-to-blue-500 tw-h-12 tw-rounded-xl tw-text-sm md:tw-text-base tw-text-white tw-font-semibold tw-w-full tw-max-w-full mt-2 hover:tw-from-indigo-600 hover:tw-to-blue-600 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-blue-500 focus:tw-ring-offset-2 active:tw-from-indigo-700 active:tw-to-blue-700">
+                            @lang('lang_v1.login')
+                        </button>
+                    </form>
+
+                    <div class="tw-flex tw-items-center tw-flex-col">
+                        <!-- Register Url -->
+
+                        @if (!($request->segment(1) == 'business' && $request->segment(2) == 'register'))
+                            <!-- Register Url -->
+                            @if (config('constants.allow_registration'))
+                                <a href="{{ route('business.getRegister') }}@if (!empty(request()->lang)) {{ '?lang=' . request()->lang }} @endif"
+                                    class="tw-text-sm tw-font-medium tw-text-gray-500 hover:tw-text-gray-500 tw-mt-2">{{ __('business.not_yet_registered') }}
+                                    <span
+                                        class="tw-text-sm tw-font-medium tw-bg-gradient-to-r tw-from-indigo-500 tw-to-blue-500 tw-inline-block tw-text-transparent tw-bg-clip-text hover:tw-text-[#467BF5] hover:tw-underline">{{ __('business.register_now') }}</span></a>
+                            @endif
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
