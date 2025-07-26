@@ -1,511 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<style>
-    *{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        background-color: #10162E;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  });
+</script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      background-color: #10162E;
+      /* background-color: #17223f; */
     }
-</style>
+  </style>
+</head>
 <body>
-<!-- navbar -->
-     <nav class="flex items-center justify-between p-4 bg-[rgba(255,255,255,0.15)] text-white fixed top-0 left-0 right-0 z-50 backdrop-blur-3xl bg-[rgba(255,255,255,0.15)]">
-        <div class="flex items-center bg-transparent">
-            <img src="./logo1.svg" alt="Afra Logo" class="h-14 mr-2 bg-transparent">
-            <span class="text-4xl font-extrabold text-gray-100 bg-transparent">afra</span>
+  <!-- navbar -->
+  <!-- <nav class="flex items-center justify-between p-4 bg-[rgba(28,34,56,1)] text-white fixed top-0 left-0 right-0 z-50 ">
+
+    <div class="flex items-center bg-transparent">
+      <img src="./logo1.svg" alt="Afra Logo" class="h-14 mr-2 bg-transparent">
+      <span class="text-4xl font-extrabold text-gray-100 bg-transparent">Aston</span>
+    </div>
+
+    </div>
+    <div class="flex items-center space-x-4 bg-transparent">
+
+      <div class="hidden md:flex items-center space-x-6 bg-transparent">
+        <a href="#" class="text-white hover:text-gray-200 font-semibold bg-transparent">Pricing</a>
+        <a href="#" class="text-white hover:text-gray-200 font-semibold bg-transparent">Contact us</a>
+      </div>
+
+      <div class="relative hidden md:block bg-transparent"> <select
+          class=" block appearance-none bg-transparent border-none text-white py-2 px-3 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline font-semibold">
+          <option class="bg-blue-400 text-white" value="en">EN</option>
+          <option class="bg-blue-400 text-white" value="es">ES</option>
+          <option class="bg-blue-400 text-white" value="fr">FR</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white bg-transparent">
+          <svg class="bg-transparent fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+          </svg>
         </div>
+      </div>
 
-        </div>
-        <div class="flex items-center space-x-4 bg-transparent">
+      <button
+        class="px-4 py-2 border-2 border-white text-white rounded-md hover:bg-white hover:text-blue-400 font-semibold transition-colors duration-300">
+        Login
+      </button>
 
-            <div class="hidden md:flex items-center space-x-6 bg-transparent">
-                <a href="#" class="text-white hover:text-gray-200 font-semibold bg-transparent">Pricing</a>
-                <a href="#" class="text-white hover:text-gray-200 font-semibold bg-transparent">Contact us</a>
-            </div>
+      <button
+        class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 font-semibold transition-colors duration-300">
+        Register
+      </button>
 
-            <div class="relative hidden md:block bg-transparent"> <select class=" block appearance-none bg-transparent border-none text-white py-2 px-3 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline font-semibold">
-                    <option class="bg-blue-400 text-white" value="en">EN</option>
-                    <option class="bg-blue-400 text-white" value="es">ES</option>
-                    <option class="bg-blue-400 text-white" value="fr">FR</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white bg-transparent">
-                    <svg class="bg-transparent fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                </div>
-            </div>
-
-            <button class="px-4 py-2 border-2 border-white text-white rounded-md hover:bg-white hover:text-blue-400 font-semibold transition-colors duration-300">
-                Login
-            </button>
-
-            <button class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 font-semibold transition-colors duration-300">
-                Register
-            </button>
-
-            <button class="md:hidden text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-    </nav>
-
-<!-- section_one -->
-<section class="w-[80%] m-auto flex flex-col md:flex-row items-center justify-between py-[5%] px-[5%] md:gap-x-[5%] gap-y-[5%] ">
-  <div class="md:w-[50%] text-center md:text-left order-2 md:order-1">
-    <h1 class="text-5xl font-bold leading-tight text-white mb-[3%] ">An ERP System to Run Your Entire Business</h1>
-    <p class="text-lg text-gray-400 mb-[5%]">
-      Manage your business, from sales and invoicing, your books, your clientele and workforce to your inventory and operations. With powerful, fully integrated business management modules implemented to meet your business needs anywhere, anytime, seamlessly track in real-time, control and grow your business while our software supplements your work.
-    </p>
-    <button class="bg-green-600 text-white py-[2%] px-[4%] rounded-md text-lg font-semibold hover:bg-green-700 transition duration-300">
-      GET STARTED FOR FREE
-    </button>
-    <div class="flex justify-center md:justify-start items-center mt-[3%] space-x-[2%]">
-      <div class="flex items-center">
-        <svg class="w-[1.5%] h-[1.5%] mr-[0.5%] text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+      <button class="md:hidden text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
-        <span class="text-gray-600 text-sm">Free 14-day trial</span>
-      </div>
-      <div class="flex items-center">
-        <svg class="w-[1.5%] h-[1.5%] mr-[0.5%] text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-        </svg>
-        <span class="text-gray-600 text-sm">No credit card needed</span>
-      </div>
-      <div class="flex items-center">
-        <svg class="w-[1.5%] h-[1.5%] mr-[0.5%] text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-        </svg>
-        <span class="text-gray-600 text-sm">No Setup</span>
-      </div>
-    </div>
-  </div>
-  <div class="md:w-[50%] flex justify-center order-1 md:order-2">
-    <img src="./images/home-img.svg" alt="ERP System Illustration" class="w-[100%] h-auto max-w-full">
-  </div>
-</section>
-<!-- section_two -->
-<section class="py-[8%] px-[5%]">
-  <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-white mb-4">
-      <span class="font-extrabold text-blue-400">Daftra</span> Integrated Business Apps
-    </h2>
-    <p class="text-gray-400 mb-8 text-sm">
-      Performing equally effectively, separately and simultaneously - <br />
-      Use all, activate or deactivate to match your business needs.
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-      <div class="bg-[rgba(255,255,255,0.15)] rounded-md shadow-md p-6 flex flex-col items-start">
-        <div class="w-8 h-8 rounded-md flex items-center justify-center mb-2">
-          <svg fill="#6A3093" viewBox="0 0 20 20" class="w-5 h-5">
-            <path d="M2 2a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V4a2 2 0 00-2-2H2zm6.5 4.5a.5.5 0 01.5-.5h5a.5.5 0 010 1h-5a.5.5 0 01-.5-.5zM6 8a.5.5 0 01.5-.5h8a.5.5 0 010 1h-8A.5.5 0 016 8zm0 2.5a.5.5 0 01.5-.5h8a.5.5 0 010 1h-8a.5.5 0 01-.5-.5zM6 14a.5.5 0 01.5-.5h5a.5.5 0 010 1h-5a.5.5 0 01-.5-.5z" />
-          </svg>
-        </div>
-        <h3 class="bg-transparent font-semibold text-lg text-gray-300 mb-1">Sales</h3>
-        <p class="text-gray-400 text-sm bg-transparent">
-          Invoicing, POS, Sales Commission, Insurance Management, Offers, Installments
-        </p>
-      </div>
-      <div class="bg-[rgba(255,255,255,0.15)] rounded-md shadow-md p-6 flex flex-col items-start">
-        <div class="w-8 h-8 rounded-md flex items-center justify-center mb-2">
-          <svg fill="#2E7D32" viewBox="0 0 20 20" class="w-5 h-5">
-            <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 8a1 1 0 011-1h9a1 1 0 110 2H4a1 1 0 01-1-1zM3 12a1 1 0 011-1h9a1 1 0 110 2H4a1 1 0 01-1-1zM3 16a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
-          </svg>
-        </div>
-        <h3 class="bg-transparent font-semibold text-lg text-gray-300 mb-1">Accounting</h3>
-        <p class="bg-transparent text-gray-400 text-sm">
-          Expenses, Tax, Treasures, Cheque Cycle, Chart of Accounts, Auto-Journals,
-          Assets, Cost Centers, General Ledger, Financial Reports
-        </p>
-      </div>
-      <div class="bg-[rgba(255,255,255,0.15)] rounded-md shadow-md p-6 flex flex-col items-start">
-        <div class="w-8 h-8 rounded-md flex items-center justify-center mb-2">
-          <svg fill="#D81B60" viewBox="0 0 20 20" class="w-5 h-5">
-            <path d="M4 4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a1 1 0 011-1h6a1 1 0 011 1v4a1 1 0 01-1 1H7a1 1 0 01-1-1v-4zm5-4a1 1 0 10-2 0v2a1 1 0 102 0V6z" />
-          </svg>
-        </div>
-        <h3 class="bg-transparent font-semibold text-lg text-gray-300 mb-1">Inventory</h3>
-        <p class="bg-transparent text-gray-400 text-sm">
-          Stock Tracking, Barcodes, Purchases, Suppliers, Warehouses, Stocktaking,
-          Requisitions, Price Lists
-        </p>
-      </div>
-      <div class="bg-[rgba(255,255,255,0.15)] rounded-md shadow-md p-6 flex flex-col items-start">
-        <div class="w-8 h-8 rounded-md flex items-center justify-center mb-2" >
-          <svg fill="#E65100" viewBox="0 0 20 20" class="w-5 h-5">
-            <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
-          </svg>
-        </div>
-        <h3 class="bg-transparent font-semibold text-lg text-gray-300 mb-1">Human Resource</h3>
-        <p class="bg-transparent text-gray-400 text-sm">
-          Employee Database, Payroll, Contracts, Attendance & Leave Management,
-          Multi-Shifts, Requests, Loans
-        </p>
-      </div>
-      <div class="bg-[rgba(255,255,255,0.15)] rounded-md shadow-md p-6 flex flex-col items-start">
-        <div class="w-8 h-8 rounded-md flex items-center justify-center mb-2" >
-          <svg fill="#1976D2" viewBox="0 0 20 20" class="w-5 h-5">
-            <path d="M3 4a2 2 0 00-2 2v6a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2H3zM14 7a1 1 0 011 1v4a1 1 0 01-1 1H6a1 1 0 01-1-1V8a1 1 0 011-1h8z" />
-          </svg>
-        </div>
-        <h3 class="bg-transparent font-semibold text-lg text-gray-300 mb-1">Operations</h3>
-        <p class="bg-transparent text-gray-400 text-sm">
-          Work Orders, Project Management, Online Booking Management, Time Tracking
-        </p>
-      </div>
-      <div class="bg-[rgba(255,255,255,0.15)] rounded-md shadow-md p-6 flex flex-col items-start">
-        <div class="w-8 h-8 rounded-md flex items-center justify-center mb-2" >
-          <svg fill="#00897B" viewBox="0 0 20 20" class="w-5 h-5">
-            <path d="M13 7a1 1 0 11-2 0 1 1 0 012 0zm-2 6a1 1 0 112 0 1 1 0 01-2 0zM9 9a1 1 0 11-2 0 1 1 0 012 0zm-2 4a1 1 0 112 0 1 1 0 01-2 0zM15 11a1 1 0 11-2 0 1 1 0 012 0zm-2-2a1 1 0 112 0 1 1 0 01-2 0zM5 9a1 1 0 11-2 0 1 1 0 012 0zm-2 4a1 1 0 112 0 1 1 0 01-2 0zM7 7a1 1 0 11-2 0 1 1 0 012 0zm-2-2a1 1 0 112 0 1 1 0 01-2 0z" />
-          </svg>
-        </div>
-        <h3 class="bg-transparent font-semibold text-lg text-gray-300 mb-1">CRM</h3>
-        <p class="bg-transparent text-gray-400 text-sm">
-          Contact Management, Appointment Assignment, Memberships, Points &
-          Credits, Client Follow-Up, Client Attendance
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- section_three -->
-  <section class="w-[80%] m-auto py-[8%] px-[5%] flex flex-col md:flex-row items-center justify-center">
-    <div class="md:w-[50%] flex justify-center mb-[5%] md:mb-0">
-        <img src="./images/home-accounting-sc.webp" alt="Cashflow Illustration" class="w-[90%] h-auto max-w-full">
-    </div>
-    <div class="md:w-[50%] text-center md:text-left md:pl-[5%]">
-        <h2 class="text-4xl font-bold text-gray-300 mb-[2%]">
-            End-to-end <span class="text-blue-400">Accounting</span> and Bookkeeping
-        </h2>
-        <p class="text-gray-400 mb-[4%] text-sm">
-            Find automated, accurate books and journal entries, track transactions,
-            monitor income and expenses. With a ready-made and modifiable chart of
-            accounts; manage finances across branches according to your business
-            structure.
-        </p>
-        <p class="text-gray-400 mb-[4%] text-sm">
-            Elevate your decision-making with real-time income and cash flow
-            statements, general ledger, balance sheet and profit & loss reports.
-        </p>
-
-        <ul class="space-y-[1.5%]">
-            <li class="flex items-center text-gray-400 text-sm">
-                <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                Chart of Accounts & Journals Accounting
-            </li>
-            <li class="flex items-center text-gray-400 text-sm">
-                <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                Finance & Expenses Tracking
-            </li>
-            <li class="flex items-center text-gray-400 text-sm">
-                <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                Assets Management
-            </li>
-            <li class="flex items-center text-gray-400 text-sm">
-                <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                Cost Centers
-            </li>
-            <li class="flex items-center text-gray-400 text-sm">
-                <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                Cheque Cycle
-            </li>
-        </ul>
-    </div>
-  </section> 
-<!-- section_four -->
-  <section class="w-[80%] m-auto py-[8%] px-[5%] flex flex-col md:flex-row items-center justify-center">
-    <div class="md:w-[50%] text-center md:text-left mb-[5%] md:mb-0 md:pr-[5%] order-2 md:order-1">
-        <h2 class="text-4xl font-bold text-gray-300 mb-[2%]">
-            Convenient Operations, <br /><span class="text-blue-400">beyond ERP</span>
-        </h2>
-        <p class="text-gray-400 mb-[4%] text-sm">
-            Manage projects, create work orders, assign tasks to employees, keep track
-            of time and efforts spent on each project and task.
-        </p>
-        <p class="text-gray-400 mb-[4%] text-sm">
-            Keep track of online bookings and easily manage them using our
-            convenient operations management features.
-        </p>
-
-        <ul class="space-y-[1.5%]">
-            <li class="flex items-center text-gray-400 text-sm">
-                <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                Work Orders
-            </li>
-            <li class="flex items-center text-gray-400 text-sm">
-                <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                Bookings Management
-            </li>
-            <li class="flex items-center text-gray-400 text-sm">
-                <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                </svg>
-                Time Tracking
-            </li>
-        </ul>
-    </div>
-    <div class="md:w-[50%] flex justify-center order-1 md:order-2">
-        <img src="./images/home-operation-sc.webp" alt="Operations Illustration" class="w-[90%] h-auto max-w-full">
-    </div>
-</section>
-<!-- section_five -->
- <section class="py-[8%] px-[5%] flex items-center justify-center">
-    <div class="w-[80%] m-auto bg-blue-400 rounded-2xl p-[5%] max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
-        <div class="bg-transparent absolute top-0 left-0 w-full h-full opacity-10" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1000 300\'><path fill=\'none\' stroke=\'white\' stroke-width=\'1\' d=\'M0,150 Q100,50 200,150 T400,150 T600,150 T800,150 T1000,150\'/><path fill=\'none\' stroke=\'white\' stroke-width=\'1\' d=\'M0,160 Q100,60 200,160 T400,160 T600,160 T800,160 T1000,160\'/><path fill=\'none\' stroke=\'white\' stroke-width=\'1\' d=\'M0,170 Q100,70 200,170 T400,170 T600,170 T800,170 T1000,170\'/></svg>'); background-repeat: no-repeat; background-size: cover;"></div>
-
-        <div class="bg-transparent relative z-10 text-center md:text-left md:w-3/4 mb-[3%] md:mb-0">
-            <h2 class="bg-transparent text-3xl lg:text-4xl font-bold text-white mb-[1%]">
-                An Easy-to-use Business <br class="hidden md:block" />Management Software
-            </h2>
-            <p class="bg-transparent text-gray-200 text-sm">
-                Daftra Accounting software is built for both accountants and business owners <br class="hidden md:block" /> with no accounting knowledge.
-            </p>
-        </div>
-        <div class="bg-transparent relative z-10 md:w-1/4 flex justify-center md:justify-end">
-            <button class="bg-green-500 text-white py-[5%] px-[8%] rounded-md text-lg font-semibold hover:bg-green-700 transition duration-300 whitespace-nowrap">
-                GET STARTED FOR FREE
-            </button>
-        </div>
-    </div>
-</section>
-<!-- About-us section -->
-<section class="py-16 relative overflow-hidden">
- 
-
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-extrabold text-gray-300 leading-tight text-left"><span class="text-blue-400">Daftra</span>Promises as Your <br> Business Partner</h2>
-      <p class="mt-4 text-lg text-gray-400 text-left">Find out why Daftra has been the choice of over 10,000 SMEs.</p>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
-        <div class="p-6">
-          <div class="mb-4 text-blue-400">
-            <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 0a1.001 1.001 0 00-1.414 0m1.414 0l-3.536 3.536m0 0a1.001 1.001 0 00-1.414 0M9.636 18.364l3.536-3.536m0 0a1.001 1.001 0 001.414 0m-1.414 0l3.536-3.536m0 0a1.001 1.001 0 001.414 0M5.636 5.636l3.536 3.536m0 0a1.001 1.001 0 000 1.414M5.636 5.636l3.536-3.536m0 0a1.001 1.001 0 000-1.414"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Free and Quick Support</h3>
-          <p class="text-gray-400 text-sm text-center">Daftra support is equipped to meet your every inquiry, round-the-clock.</p>
-        </div>
-  <div class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
-    <p class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-</div>
-      </div>
-
-      <div class="relative overflow-hidden  rounded-lg shadow-xl transition-shadow duration-300 group ">
-        <div class="p-6">
-          <div class="mb-4 text-blue-400">
-            <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002.944 12c.045 4.757 3.67 8.382 8.382 8.382h.001c4.712 0 8.337-3.625 8.382-8.382a12.007 12.007 0 00-1.382-7.056z"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Safe and Secure</h3>
-          <p class="text-gray-400 text-sm text-center">Daftra is hosted on secure servers, with 256-bit SSL encryption for your data.</p>
-        </div>
-<div class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
-    <p class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-</div>
-      </div>
-
-      <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
-        <div class="p-6">
-          <div class="mb-4 text-blue-400">
-            <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Personalized Experience</h3>
-          <p class="text-gray-400 text-sm text-center">Curated with personalization prioritized, create from scratch to suit your needs.</p>
-        </div>
-=<div class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
-    <p class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-</div>
-      </div>
-
-      <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
-        <div class="p-6">
-          <div class="mb-4 text-blue-400">
-            <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Simple and Advanced</h3>
-          <p class="text-gray-400 text-sm text-center">Daftra user manuals are there to guide you, but you won't need them often.</p>
-        </div>
- <div class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
-    <p class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-</div>
-      </div>
-
-      <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
-        <div class="p-6">
-          <div class="mb-4 text-blue-400">
-            <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Save Time and Effort</h3>
-          <p class="text-gray-400 text-sm text-center">Our intuitive user interface, backed by automation, is designed for efficiency.</p>
-        </div>
-<div class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
-    <p class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-</div>
-      </div>
-
-      <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
-        <div class="p-6">
-          <div class="mb-4 text-blue-400">
-            <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-4m0 0l4 4m-4-4v4m-6-10h2m-2 4h2m-2 4h2m-2 4h2m-2 4h2m-2 4h2M6 8l3-3 3 3m-3-3v3m-3 3h3"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Remote, Yes. Disconnected, Never.</h3>
-          <p class="text-gray-400 text-sm text-center">Daftra is cloud-based; your business is never out of reach on any device.</p>
-        </div>
-<div class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
-    <p class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-</div>
-      </div>
-
-      <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
-        <div class="p-6">
-          <div class="mb-4 text-blue-400">
-            <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004 12c0 4.418 3.582 8 8 8s8-3.582 8-8V9.5M12 12h.01M12 7h.01"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Free Lifetime Updates</h3>
-          <p class="text-gray-400 text-sm text-center">Daftra is constantly growing to expand supporting your business journey.</p>
-        </div>
-<div class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
-    <p class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-</div>
-      </div>
-
-      <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
-        <div class="p-6">
-          <div class="mb-4 text-blue-400">
-            <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h4m-4 0a2 2 0 100-4 2 2 0 000 4zm0 0l-1.5 1.5M17 18h.01M17 6h.01"></path>
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Cut-rate Deal</h3>
-          <p class="text-gray-400 text-sm text-center">All-in-one and accessible for your business in whatever size it may be.</p>
-        </div>
- <div class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
-    <p class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-</div>
-      </div>
-
-    </div>
-  </div>
-<!-- section_six -->
- <section class="py-[8%] px-[5%] text-center">
-    <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl md:text-4xl font-bold text-gray-300 leading-tight mb-[2%]">
-            Whatever your business is, <span class="text-blue-400">Daftra</span> will fit it!
-        </h2>
-        <p class="text-gray-400 text-lg mb-[3%]">
-            Daftra offers tailor-made apps to fit businesses across all industries,
-            allowing you to track, manage, and grow seamlessly.
-        </p>
-
-    </div>
-
-    <div class="mt-[5%] flex justify-center">
-        <img src="./images/big-banner.jpg" alt="Diverse Professionals" class="w-[100%] h-auto max-w-full rounded-lg shadow-lg">
-    </div>
-</section>
-<!-- section_seven -->
-<section class="max-w-2xl mx-auto p-4 mb-20">
-  <h2 class="text-3xl font-bold text-center text-gray-300 mb-6">Contact Us</h2>
-  <form class="space-y-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div>
-        <label for="name" class="block text-gray-200 text-sm font-bold mb-2">Name <span class="text-red-500">*</span></label>
-        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100" required>
-      </div>
-      <div>
-        <label for="email" class="block text-gray-200 text-sm font-bold mb-2">Email Address <span class="text-red-500">*</span></label>
-        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100" required>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div>
-        <label for="subject" class="block text-gray-200 text-sm font-bold mb-2">Subject <span class="text-red-500">*</span></label>
-        <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100" required>
-      </div>
-      <div>
-        <label for="phone" class="block text-gray-200 text-sm font-bold mb-2">Phone <span class="text-red-500">*</span></label>
-        <input type="tel" id="phone" name="phone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100" required>
-      </div>
-    </div>
-    <div>
-      <label for="message" class="block text-gray-200 text-sm font-bold mb-2">Message <span class="text-red-500">*</span></label>
-      <textarea id="message" name="message" rows="6" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100" required></textarea>
-    </div>
-    <div class="flex items-center justify-center">
-      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full transition duration-300 whitespace-nowrap">
-        SEND MESSAGE
       </button>
     </div>
-  </form>
-</section>
-<!-- footer -->
-<footer class="bg-blue-400 py-8">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-transparent">
-    <div class="flex justify-center mb-4 bg-transparent">
-      <img src="./Logo.svg" class="h-40 w-40 bg-transparent" alt="Logo">
+  </nav> -->
+<nav class=" bg-[rgba(28,34,56,1)] text-white fixed top-0 left-0 right-0 z-50">
+  <div class="bg-transparent flex items-center justify-between p-4">
+    <!-- Logo -->
+    <div class="flex items-center bg-transparent">
+      <img src="./logo1.svg" alt="Afra Logo" class="h-14 mr-2 bg-transparent">
+      <span class="text-4xl font-extrabold text-gray-100 bg-transparent">Aston</span>
     </div>
-    <div class="border-t border-gray-300 pt-4 text-center text-white text-sm bg-transparent">
-      <p class="text-black bg-transparent">This site is protected with 256-bit SSL security. © Period 2025. All rights reserved.</p>
-      <p class="text-black bg-transparent">
-        <a href="#" class="p-5 hover:font-bold bg-transparent">Terms and Conditions</a> |
-      
-        <a href="#" class="p-5 hover:font-bold bg-transparent">Privacy Policy</a>
-      </p>
+
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center space-x-6 bg-transparent">
+      <a href="#" class="text-white hover:text-gray-200 font-semibold bg-transparent">Pricing</a>
+      <a href="#" class="text-white hover:text-gray-200 font-semibold bg-transparent">Contact us</a>
+      <div class="relative bg-transparent">
+        <select class="appearance-none bg-transparent border-none text-white py-2 px-3 pr-8 rounded leading-tight focus:outline-none font-semibold">
+          <option class="bg-blue-400 text-white" value="en">EN</option>
+          <option class="bg-blue-400 text-white" value="es">ES</option>
+          <option class="bg-blue-400 text-white" value="fr">FR</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white bg-transparent">
+          <svg class="fill-current h-4 w-4 bg-transparent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+          </svg>
+        </div>
+      </div>
+      <button class="px-4 py-2 border-2 border-white text-white rounded-md hover:bg-white hover:text-blue-400 font-semibold transition duration-300">Login</button>
+      <button class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 font-semibold transition duration-300">Register</button>
     </div>
+
+    <!-- Mobile menu button -->
+    <button id="menu-toggle" class="md:hidden focus:outline-none">
+      <svg class="w-6 h-6 bg-transparent" fill="none" stroke="currentColor " viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
   </div>
-</footer>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden flex-col items-start space-y-4 px-4 pb-4">
+    <a href="#" class="text-white hover:text-gray-200 font-semibold">Pricing</a>
+    <a href="#" class="text-white hover:text-gray-200 font-semibold">Contact us</a>
+    <select class="appearance-none bg-transparent border border-white text-white py-2 px-3 rounded w-full">
+      <option class="bg-blue-400 text-white" value="en">EN</option>
+      <option class="bg-blue-400 text-white" value="es">ES</option>
+      <option class="bg-blue-400 text-white" value="fr">FR</option>
+    </select>
+    <button class="w-full px-4 py-2 border-2 border-white text-white rounded-md hover:bg-white hover:text-blue-400 font-semibold transition duration-300">Login</button>
+    <button class="w-full px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 font-semibold transition duration-300">Register</button>
+  </div>
+</nav>
+
+  <!-- section_one -->
+  <section
+    class="w-[80%] m-auto flex flex-col md:flex-row items-center justify-between py-[5%] px-[5%] md:gap-x-[5%] gap-y-[5%] mt-[6%]">
+    <div class="md:w-[50%] text-center md:text-left order-2 md:order-1">
+      <h1 class="text-5xl font-bold leading-tight text-white mb-[3%] ">An ERP System to Run Your Entire Business</h1>
+      <p class="text-lg text-gray-400 mb-[5%]">
+        Manage your business, from sales and invoicing, your books, your clientele and workforce to your inventory and
+        operations. With powerful, fully integrated business management modules implemented to meet your business needs
+        anywhere, anytime, seamlessly track in real-time, control and grow your business while our software supplements
+        your work.
+      </p>
+      <button
+        class="bg-green-600 text-white py-[2%] px-[4%] rounded-md text-lg font-semibold hover:bg-green-700 transition duration-300">
+        GET STARTED FOR FREE
+      </button>
+      <div class="flex justify-center md:justify-start items-center mt-[3%] space-x-[2%]">
+        <div class="flex items-center">
+          <svg class="w-[1.5%] h-[1.5%] mr-[0.5%] text-green-500" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-gray-600 text-sm">Free 14-day trial</span>
+        </div>
+        <div class="flex items-center">
+          <svg class="w-[1.5%] h-[1.5%] mr-[0.5%] text-green-500" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-gray-600 text-sm">No credit card needed</span>
+        </div>
+        <div class="flex items-center">
+          <svg class="w-[1.5%] h-[1.5%] mr-[0.5%] text-green-500" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-gray-600 text-sm">No Setup</span>
+        </div>
+      </div>
+    </div>
+    <div class="md:w-[50%] flex justify-center order-1 md:order-2">
+      <img src="./images/home-img.svg" alt="ERP System Illustration" class="w-[100%] h-auto max-w-full">
+    </div>
+  </section>
+  <!-- section_two -->
+  <section class="py-[8%] px-[5%]">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-white mb-4">
+        <span class="font-extrabold text-blue-400">Daftra</span> Integrated Business Apps
+      </h2>
+      <p class="mb-8 text-gray-400 text-lg">
+        Performing equally effectively, separately and simultaneously - <br />
+        Use all, activate or deactivate to match your business needs.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+        <div class="bg-[rgba(255,255,255,0.15)] rounded-md shadow-md p-6 flex flex-col items-start">
+          <div class="w-8 h-8 rounded-md flex items-center justify-center mb-2">
+            <svg fill="#6A3093" viewBox="0 0 20 20" class="w-5 h-5">
+              <path
+                d="M2 2a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V4a2 2 0 00-2-2H2zm6.5 4.5a.5.5 0 01.5-.5h5a.5.5 0 010 1h-5a.5.5 0 01-.5-.5zM6 8a.5.5 0 01.5-.5h8a.5.5 0 010 1h-8A.5.5 0 016 8zm0 2.5a.5.5 0 01.5-.5h8a.5.5 0 010 1h-8a.5.5 0 01-.5-.5zM6 14a.5.5 0 01.5-.5h5a.5.5 0 010 1h-5a.5.5 0 01-.5-.5z" />
+            </svg>
+          </div>
+          <h3 class="bg-transparent font-semibold text-lg text-gray-300 mb-1">Sales</h3>
+          <p class="text-gray-400 text-sm bg-transparent">
+            Invoicing, POS, Sales Commission, Insurance Management, Offers, Installments
+          </p>
+        </div>
+        <div class="bg-[rgba(255,255,255,0.15)] rounded-md shadow-md p-6 flex flex-col items-start">
+          <div class="w-8 h-8 rounded-md flex items-center justify-center mb-2">
+            <svg fill="#2E7D32" viewBox="0 0 20 20" class="w-5 h-5">
+              <path
+                d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 8a1 1 0 011-1h9a1 1 0 110 2H4a1 1 0 01-1-1zM3 12a1 1 0 011-1h9a1 1 0 110 2H4a1 1 0 01-1-1zM3 16a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
+            </svg>
+          </div>
+          <h3 class="bg-transparent font-semibold text-lg text-gray-300 mb-1">Accounting</h3>
+          <p class="bg-transparent text-gray-400 text-sm">
+            Expenses, Tax, Treasures, Cheque Cycle, Chart of Accounts, Auto-Journals,
+            Assets, Cost Centers, General Ledger, Financial Reports
+          </p>
+        </div>
+        <div class="bg-[rgba(255,255,255,0.15)] rounded-md shadow-md p-6 flex flex-col items-start">
+          <div class="w-8 h-8 rounded-md flex items-center justify-center mb-2">
+            <svg fill="#D81B60" viewBox="0 0 20 20" class="w-5 h-5">
+              <path
+                d="M4 4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a1 1 0 011-1h6a1 1 0 011 1v4a1 1 0 01-1 1H7a1 1 0 01-1-1v-4zm5-4a1 1 0 10-2 0v2a1 1 0 102 0V6z" />
+            </svg>
+          </div>
+          <h3 class="bg-transparent font-semibold text-lg text-gray-300 mb-1">Inventory</h3>
+          <p class="bg-transparent text-gray-400 text-sm">
+            Stock Tracking, Barcodes, Purchases, Suppliers, Warehouses, Stocktaking,
+            Requisitions, Price Lists
+          </p>
+        </div>
+        <div class="bg-[rgba(255,255,255,0.15)] rounded-md shadow-md p-6 flex flex-col items-start">
+          <div class="w-8 h-8 rounded-md flex items-center justify-center mb-2">
+            <svg fill="#E65100" viewBox="0 0 20 20" class="w-5 h-5">
+              <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
+            </svg>
+          </div>
+          <h3 class="bg-transparent font-semibold text-lg text-gray-300 mb-1">Human Resource</h3>
+          <p class="bg-transparent text-gray-400 text-sm">
+            Employee Database, Payroll, Contracts, Attendance & Leave Management,
+            Multi-Shifts, Requests, Loans
+          </p>
+        </div>
+        <div class="bg-[rgba(255,255,255,0.15)] rounded-md shadow-md p-6 flex flex-col items-start">
+          <div class="w-8 h-8 rounded-md flex items-center justify-center mb-2">
+            <svg fill="#1976D2" viewBox="0 0 20 20" class="w-5 h-5">
+              <path
+                d="M3 4a2 2 0 00-2 2v6a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2H3zM14 7a1 1 0 011 1v4a1 1 0 01-1 1H6a1 1 0 01-1-1V8a1 1 0 011-1h8z" />
+            </svg>
+          </div>
+          <h3 class="bg-transparent font-semibold text-lg text-gray-300 mb-1">Operations</h3>
+          <p class="bg-transparent text-gray-400 text-sm">
+            Work Orders, Project Management, Online Booking Management, Time Tracking
+          </p>
+        </div>
+        <div class="bg-[rgba(255,255,255,0.15)] rounded-md shadow-md p-6 flex flex-col items-start">
+          <div class="w-8 h-8 rounded-md flex items-center justify-center mb-2">
+            <svg fill="#00897B" viewBox="0 0 20 20" class="w-5 h-5">
+              <path
+                d="M13 7a1 1 0 11-2 0 1 1 0 012 0zm-2 6a1 1 0 112 0 1 1 0 01-2 0zM9 9a1 1 0 11-2 0 1 1 0 012 0zm-2 4a1 1 0 112 0 1 1 0 01-2 0zM15 11a1 1 0 11-2 0 1 1 0 012 0zm-2-2a1 1 0 112 0 1 1 0 01-2 0zM5 9a1 1 0 11-2 0 1 1 0 012 0zm-2 4a1 1 0 112 0 1 1 0 01-2 0zM7 7a1 1 0 11-2 0 1 1 0 012 0zm-2-2a1 1 0 112 0 1 1 0 01-2 0z" />
+            </svg>
+          </div>
+          <h3 class="bg-transparent font-semibold text-lg text-gray-300 mb-1">CRM</h3>
+          <p class="bg-transparent text-gray-400 text-sm">
+            Contact Management, Appointment Assignment, Memberships, Points &
+            Credits, Client Follow-Up, Client Attendance
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- section_three -->
+  <section class="w-[80%] m-auto py-[8%] px-[5%] flex flex-col md:flex-row items-center justify-center">
+    <div class="md:w-[50%] flex justify-center mb-[5%] md:mb-0">
+      <img src="./images/home-accounting-sc.webp" alt="Cashflow Illustration" class="w-[90%] h-auto max-w-full">
+    </div>
+    <div class="md:w-[50%] text-center md:text-left md:pl-[5%]">
+      <h2 class="text-4xl font-bold text-white mb-[2%]">
+        End-to-end <span class="text-blue-400">Accounting</span> and Bookkeeping
+      </h2>
+      <p class="text-gray-400 mb-[4%] text-sm">
+        Find automated, accurate books and journal entries, track transactions,
+        monitor income and expenses. With a ready-made and modifiable chart of
+        accounts; manage finances across branches according to your business
+        structure.
+      </p>
+      <p class="text-gray-400 mb-[4%] text-sm">
+        Elevate your decision-making with real-time income and cash flow
+        statements, general ledger, balance sheet and profit & loss reports.
+      </p>
+
+      <ul class="space-y-[1.5%]">
+        <li class="flex items-center text-gray-400 text-sm">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Chart of Accounts & Journals Accounting
+        </li>
+        <li class="flex items-center text-gray-400 text-sm">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Finance & Expenses Tracking
+        </li>
+        <li class="flex items-center text-gray-400 text-sm">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Assets Management
+        </li>
+        <li class="flex items-center text-gray-400 text-sm">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Cost Centers
+        </li>
+        <li class="flex items-center text-gray-400 text-sm">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Cheque Cycle
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- section_four -->
+  <section class="w-[80%] m-auto py-[8%] px-[5%] flex flex-col md:flex-row items-center justify-center">
+    <div class="md:w-[50%] text-center md:text-left mb-[5%] md:mb-0 md:pr-[5%] order-2 md:order-1">
+      <h2 class="text-4xl font-bold text-white mb-[2%]">
+        Convenient Operations, <br /><span class="text-blue-400">beyond ERP</span>
+      </h2>
+      <p class="text-gray-400 mb-[4%] text-sm">
+        Manage projects, create work orders, assign tasks to employees, keep track
+        of time and efforts spent on each project and task.
+      </p>
+      <p class="text-gray-400 mb-[4%] text-sm">
+        Keep track of online bookings and easily manage them using our
+        convenient operations management features.
+      </p>
+
+      <ul class="space-y-[1.5%]">
+        <li class="flex items-center text-gray-400 text-sm">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Work Orders
+        </li>
+        <li class="flex items-center text-gray-400 text-sm">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Bookings Management
+        </li>
+        <li class="flex items-center text-gray-400 text-sm">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-4 h-4 mr-[1%] text-blue-500">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Time Tracking
+        </li>
+      </ul>
+    </div>
+    <div class="md:w-[50%] flex justify-center order-1 md:order-2">
+      <img src="./images/home-operation-sc.webp" alt="Operations Illustration" class="w-[90%] h-auto max-w-full">
+    </div>
+  </section>
+  <!-- section_five -->
+  <section class="py-[8%] px-[5%] flex items-center justify-center">
+    <div
+      class="w-[80%] m-auto bg-blue-400 rounded-2xl p-[5%] max-w-5xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between relative overflow-hidden gap-4">
+      <div class="bg-transparent absolute top-0 left-0 w-full h-full opacity-10"
+        style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1000 300\'><path fill=\'none\' stroke=\'white\' stroke-width=\'1\' d=\'M0,150 Q100,50 200,150 T400,150 T600,150 T800,150 T1000,150\'/><path fill=\'none\' stroke=\'white\' stroke-width=\'1\' d=\'M0,160 Q100,60 200,160 T400,160 T600,160 T800,160 T1000,160\'/><path fill=\'none\' stroke=\'white\' stroke-width=\'1\' d=\'M0,170 Q100,70 200,170 T400,170 T600,170 T800,170 T1000,170\'/></svg>'); background-repeat: no-repeat; background-size: cover;">
+      </div>
+      <div class="bg-transparent relative z-10 text-center md:text-left flex-1 mb-4 md:mb-0">
+        <h2 class="bg-transparent text-3xl lg:text-4xl font-bold text-white mb-2">
+          An Easy-to-use Business <br class="hidden md:block" />Management Software
+        </h2>
+        <p class="bg-transparent text-gray-200 text-lg">
+          Daftra Accounting software is built for both accountants and business owners <br class="hidden md:block" />
+          with no accounting knowledge.
+        </p>
+      </div>
+      <div class="bg-transparent relative z-10 flex justify-center md:justify-end">
+        <button
+          class="bg-green-600 text-white py-2 px-6 rounded-md text-lg font-semibold hover:bg-green-700 transition duration-300">
+          GET STARTED FOR FREE
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About-us section -->
+  <section class="py-16 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-white leading-tight text-left"><span class="text-blue-400">Daftra
+          </span>Promises as Your <br> Business Partner</h2>
+        <p class="mt-4 text-lg text-gray-400 text-left">Find out why Daftra has been the choice of over 10,000 SMEs.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
+          <div class="p-6">
+            <div class="mb-4 text-blue-400">
+              <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M18.364 5.636l-3.536 3.536m0 0a1.001 1.001 0 00-1.414 0m1.414 0l-3.536 3.536m0 0a1.001 1.001 0 00-1.414 0M9.636 18.364l3.536-3.536m0 0a1.001 1.001 0 001.414 0m-1.414 0l3.536-3.536m0 0a1.001 1.001 0 001.414 0M5.636 5.636l3.536 3.536m0 0a1.001 1.001 0 000 1.414M5.636 5.636l3.536-3.536m0 0a1.001 1.001 0 000-1.414">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Free and Quick Support</h3>
+            <p class="text-gray-400 text-sm text-center">Daftra support is equipped to meet your every inquiry,
+              round-the-clock.</p>
+          </div>
+          <div
+            class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
+            <p
+              class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden  rounded-lg shadow-xl transition-shadow duration-300 group ">
+          <div class="p-6">
+            <div class="mb-4 text-blue-400">
+              <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002.944 12c.045 4.757 3.67 8.382 8.382 8.382h.001c4.712 0 8.337-3.625 8.382-8.382a12.007 12.007 0 00-1.382-7.056z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Safe and Secure</h3>
+            <p class="text-gray-400 text-sm text-center">Daftra is hosted on secure servers, with 256-bit SSL encryption
+              for your data.</p>
+          </div>
+          <div
+            class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
+            <p
+              class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
+          <div class="p-6">
+            <div class="mb-4 text-blue-400">
+              <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 0a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Personalized Experience</h3>
+            <p class="text-gray-400 text-sm text-center">Curated with personalization prioritized, create from scratch
+              to suit your needs.</p>
+          </div>
+          =<div
+            class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
+            <p
+              class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
+          <div class="p-6">
+            <div class="mb-4 text-blue-400">
+              <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Simple and Advanced</h3>
+            <p class="text-gray-400 text-sm text-center">Daftra user manuals are there to guide you, but you won't need
+              them often.</p>
+          </div>
+          <div
+            class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
+            <p
+              class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
+          <div class="p-6">
+            <div class="mb-4 text-blue-400">
+              <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Save Time and Effort</h3>
+            <p class="text-gray-400 text-sm text-center">Our intuitive user interface, backed by automation, is designed
+              for efficiency.</p>
+          </div>
+          <div
+            class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
+            <p
+              class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
+          <div class="p-6">
+            <div class="mb-4 text-blue-400">
+              <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 20l4-4m0 0l4 4m-4-4v4m-6-10h2m-2 4h2m-2 4h2m-2 4h2m-2 4h2m-2 4h2M6 8l3-3 3 3m-3-3v3m-3 3h3">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Remote, Yes. Disconnected, Never.</h3>
+            <p class="text-gray-400 text-sm text-center">Daftra is cloud-based; your business is never out of reach on
+              any device.</p>
+          </div>
+          <div
+            class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
+            <p
+              class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
+          <div class="p-6">
+            <div class="mb-4 text-blue-400">
+              <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004 12c0 4.418 3.582 8 8 8s8-3.582 8-8V9.5M12 12h.01M12 7h.01">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Free Lifetime Updates</h3>
+            <p class="text-gray-400 text-sm text-center">Daftra is constantly growing to expand supporting your business
+              journey.</p>
+          </div>
+          <div
+            class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
+            <p
+              class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-lg shadow-xl transition-shadow duration-300 group ">
+          <div class="p-6">
+            <div class="mb-4 text-blue-400">
+              <svg class="h-12 w-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h4m-4 0a2 2 0 100-4 2 2 0 000 4zm0 0l-1.5 1.5M17 18h.01M17 6h.01">
+                </path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-300 mb-2 text-center">Cut-rate Deal</h3>
+            <p class="text-gray-400 text-sm text-center">All-in-one and accessible for your business in whatever size it
+              may be.</p>
+          </div>
+          <div
+            class="absolute inset-x-0 bottom-0 h-0 bg-blue-400 transition-all duration-300 ease-in-out group-hover:h-full flex items-center justify-center px-5">
+            <p
+              class="bg-transparent text-gray-200 text-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+    <!-- section_six -->
+    <section class="py-[8%] px-[5%] text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-white leading-tight mb-[2%]">
+          Whatever your business is, <span class="text-blue-400">Daftra</span> will fit it!
+        </h2>
+        <p class="text-gray-400 text-lg mb-[3%]">
+          Daftra offers tailor-made apps to fit businesses across all industries,
+          allowing you to track, manage, and grow seamlessly.
+        </p>
+
+      </div>
+
+      <div class="mt-[5%] flex justify-center">
+        <img src="./images/big-banner.jpg" alt="Diverse Professionals"
+          class="w-[100%] h-auto max-w-full rounded-lg shadow-lg">
+      </div>
+    </section>
+    <!-- section_seven -->
+    <section class="max-w-2xl mx-auto p-4 mb-20">
+      <h2 class="text-4xl font-bold text-white text-center  mb-6">Contact Us</h2>
+      <form class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="name" class="block text-white text-sm font-bold mb-2">Name <span
+                class="text-red-500">*</span></label>
+            <input type="text" id="name" name="name"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
+              required>
+          </div>
+          <div>
+            <label for="email" class="block text-white text-sm font-bold mb-2">Email Address <span
+                class="text-red-500">*</span></label>
+            <input type="email" id="email" name="email"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
+              required>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="subject" class="block text-white text-sm font-bold mb-2">Subject <span
+                class="text-red-500">*</span></label>
+            <input type="text" id="subject" name="subject"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
+              required>
+          </div>
+          <div>
+            <label for="phone" class="block text-white text-sm font-bold mb-2">Phone <span
+                class="text-red-500">*</span></label>
+            <input type="tel" id="phone" name="phone"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
+              required>
+          </div>
+        </div>
+        <div>
+          <label for="message" class="block text-white text-sm font-bold mb-2">Message <span
+              class="text-red-500">*</span></label>
+          <textarea id="message" name="message" rows="6"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100"
+            required></textarea>
+        </div>
+        <div class="flex justify-center">
+          <button type="submit"
+            class="w-1/2 bg-green-600 text-white py-2 px-4 rounded-md text-lg font-semibold hover:bg-green-700 transition duration-300">
+            SEND MESSAGE
+          </button>
+        </div>
+
+      </form>
+    </section>
+    <!-- footer -->
+    <footer class="bg-blue-400 py-8 ">
+      <div class="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 bg-transparent">
+        <div class="flex justify-center mb-4 bg-transparent">
+          <img src="./Logo.svg" class="h-40 w-40 bg-transparent" alt="Logo">
+        </div>
+        <div class="border-t border-gray-300 pt-4 text-center text-white text-sm bg-transparent">
+          <p class="text-black bg-transparent">This site is protected with 256-bit SSL security. © Period 2025. All
+            rights reserved.</p>
+          <p class="text-black bg-transparent">
+            <a href="#" class="p-5 hover:font-bold bg-transparent">Terms and Conditions</a> |
+
+            <a href="#" class="p-5 hover:font-bold bg-transparent">Privacy Policy</a>
+          </p>
+        </div>
+      </div>
+    </footer>
 </body>
 </html>
