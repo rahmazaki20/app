@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aston Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #10162E;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class=" bg-[rgba(28,34,56,1)] text-white fixed top-0 left-0 right-0 z-50">
+    <div class="bg-transparent flex items-center justify-between p-4">
+      <!-- Logo -->
+      <div class="flex items-center bg-transparent">
+        <img src="./logo1.svg" alt="Afra Logo" class="h-14 mr-2 bg-transparent">
+        <span class="text-4xl font-extrabold text-gray-100 bg-transparent">Aston</span>
+      </div>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center space-x-6 bg-transparent">
+        <a href="#" class="text-white hover:text-gray-200 font-semibold bg-transparent">Pricing</a>
+        <a href="#" class="text-white hover:text-gray-200 font-semibold bg-transparent">Contact us</a>
+        <div class="relative bg-transparent">
+          <select
+            class="appearance-none bg-transparent border-none text-white py-2 px-3 pr-8 rounded leading-tight focus:outline-none font-semibold">
+            <option class="bg-blue-400 text-white" value="en">EN</option>
+            <option class="bg-blue-400 text-white" value="es">ES</option>
+            <option class="bg-blue-400 text-white" value="fr">FR</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white bg-transparent">
+            <svg class="fill-current h-4 w-4 bg-transparent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+            </svg>
+          </div>
+        </div>
+        <button
+          class="px-4 py-2 border-2 border-white text-white rounded-md hover:bg-white hover:text-blue-400 font-semibold transition duration-300">Login</button>
+        <button
+          class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 font-semibold transition duration-300">Register</button>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6 bg-transparent" fill="none" stroke="currentColor " viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden flex-col items-start space-y-4 px-4 pb-4">
+      <a href="#" class="text-white hover:text-gray-200 font-semibold">Pricing</a>
+      <a href="#" class="text-white hover:text-gray-200 font-semibold">Contact us</a>
+      <select class="appearance-none bg-transparent border border-white text-white py-2 px-3 rounded w-full">
+        <option class="bg-blue-400 text-white" value="en">EN</option>
+        <option class="bg-blue-400 text-white" value="es">ES</option>
+        <option class="bg-blue-400 text-white" value="fr">FR</option>
+      </select>
+      <button
+        class="w-full px-4 py-2 border-2 border-white text-white rounded-md hover:bg-white hover:text-blue-400 font-semibold transition duration-300">Login</button>
+      <button
+        class="w-full px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 font-semibold transition duration-300">Register</button>
+    </div>
+  </nav>
+
+  <div class="flex flex-col items-center mt-[100px]">
+    <div class="w-full max-w-4xl bg-white shadow-md rounded-xl p-6 space-y-6">
+      <!-- Heading -->
+      <div class="flex items-center flex-col text-center bg-white">
+        <h1 class="text-lg md:text-xl font-bold text-[#cc9D6A] bg-white">Aston. ERP</h1>
+        <h2 class="text-sm font-medium text-[#cc9D6A] bg-white">Register and Get Started in minutes</h2>
+      </div>
+      <!-- Group 1 -->
+      <div class="flex justify-between items-start gap-4">
+        <!-- Button 1 -->
+        <button class="w-[33%] p-[14px] bg-[#2184BE] text-black text-sm font-normal rounded-md text-left">
+          1. Business
+        </button>
+
+        <!-- Button 2 -->
+        <button class="w-[33%] p-[14px] bg-[#9DC8E2] text-black text-sm font-normal' rounded-md text-left">
+          2. Business Settings
+        </button>
+
+        <!-- Button 3 -->
+        <button class="w-[33%] p-[14px] bg-[#9DC8E2] text-black text-sm font-normal rounded-md text-left">
+          3. Owner
+        </button>
+      </div>
+      <form class="p-6 bg-white rounded-lg shadow-md max-w-4xl mx-auto">
+        <h3 class="text-[21px] mb-4 font-normal">Business Details</h3>
+
+
+        <!-- Group 1 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex flex-col w-full md:col-span-2">
+            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">Business Name:*</label>
+            <div class="flex items-center border rounded px-3 py-2 w-full">
+              <i class="fa fa-suitcase mr-2 text-gray-500"></i>
+              <input id="business-field" type="text" class="w-full outline-none" placeholder="Business Name" />
+            </div>
+          </div>
+
+          <div class="flex flex-col w-full md:col-span-2">
+            <label for="start-date" class="mb-1 text-sm font-medium text-gray-700">Start Date</label>
+            <div class="flex items-center border rounded px-3 py-2 w-full">
+              <i class="fa fa-calendar mr-2 text-gray-500"></i>
+              <input id="start-date" type="date" class="w-full outline-none" />
+            </div>
+          </div>
+
+          <!-- Currency Dropdown Styled Like Other Fields -->
+          <div class="flex flex-col w-full md:col-span-2">
+            <label for="currency" class="mb-1 text-sm font-medium text-gray-700">Currency:*</label>
+            <div class="flex items-center border rounded px-3 py-2 w-full">
+              <i class="fas fa-money-bill-alt mr-2 text-gray-500"></i>
+              <select id="currency" class="currency-select w-full outline-none border-none focus:ring-0">
+                <option value="">Select Currency</option>
+                <option value="AFN">Afghanistan - Afghani (AFN)</option>
+                <option value="ALL">Albania - Lek (ALL)</option>
+                <option value="DZD">Algeria - Dinar (DZD)</option>
+                <option value="USD">United States - Dollar (USD)</option>
+                <option value="EUR">Eurozone - Euro (EUR)</option>
+                <option value="AOA">Angola - Kwanza (AOA)</option>
+                <option value="ARS">Argentina - Peso (ARS)</option>
+                <option value="AUD">Australia - Dollar (AUD)</option>
+                <option value="BDT">Bangladesh - Taka (BDT)</option>
+                <option value="BRL">Brazil - Real (BRL)</option>
+                <option value="CAD">Canada - Dollar (CAD)</option>
+                <option value="CLP">Chile - Peso (CLP)</option>
+                <option value="CNY">China - Yuan Renminbi (CNY)</option>
+                <option value="COP">Colombia - Peso (COP)</option>
+                <option value="CZK">Czech Republic - Koruna (CZK)</option>
+                <option value="DKK">Denmark - Krone (DKK)</option>
+                <option value="EGP">Egypt - Pound (EGP)</option>
+                <option value="HKD">Hong Kong - Dollar (HKD)</option>
+                <option value="HUF">Hungary - Forint (HUF)</option>
+                <option value="INR">India - Rupee (INR)</option>
+                <option value="IDR">Indonesia - Rupiah (IDR)</option>
+                <option value="ILS">Israel - Shekel (ILS)</option>
+                <option value="JPY">Japan - Yen (JPY)</option>
+                <option value="KES">Kenya - Shilling (KES)</option>
+                <option value="KRW">Korea - Won (KRW)</option>
+                <option value="KWD">Kuwait - Dinar (KWD)</option>
+                <option value="LBP">Lebanon - Pound (LBP)</option>
+                <option value="MXN">Mexico - Peso (MXN)</option>
+                <option value="MYR">Malaysia - Ringgit (MYR)</option>
+                <option value="NGN">Nigeria - Naira (NGN)</option>
+                <option value="NOK">Norway - Krone (NOK)</option>
+                <option value="NZD">New Zealand - Dollar (NZD)</option>
+                <option value="PKR">Pakistan - Rupee (PKR)</option>
+                <option value="PHP">Philippines - Peso (PHP)</option>
+                <option value="PLN">Poland - Zloty (PLN)</option>
+                <option value="QAR">Qatar - Riyal (QAR)</option>
+                <option value="RUB">Russia - Ruble (RUB)</option>
+                <option value="SAR">Saudi Arabia - Riyal (SAR)</option>
+                <option value="SGD">Singapore - Dollar (SGD)</option>
+                <option value="ZAR">South Africa - Rand (ZAR)</option>
+                <option value="SEK">Sweden - Krona (SEK)</option>
+                <option value="CHF">Switzerland - Franc (CHF)</option>
+                <option value="TRY">Turkey - Lira (TRY)</option>
+                <option value="AED">UAE - Dirham (AED)</option>
+                <option value="GBP">United Kingdom - Pound (GBP)</option>
+                <option value="VND">Vietnam - Dong (VND)</option>
+                <!-- Add more as needed -->
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- Upload Logo Field Styled Like Other Inputs -->
+        <div class="flex flex-col w-full md:col-span-2">
+          <label for="logo-upload" class="mb-1 text-sm font-medium text-gray-700 mt-4">Upload Logo:</label>
+          <div class="flex items-center border rounded px-3 py-2 w-full">
+            <i class="fas fa-image mr-2 text-gray-500"></i>
+            <input class="w-full outline-none text-sm text-gray-700 bg-transparent cursor-default" type="text"
+              placeholder="" readonly id="file-name-display" />
+            <label for="logo-upload"
+              class="ml-4 bg-[#C99963] text-white text-sm font-semibold px-3 py-1.5 rounded cursor-pointer flex items-center justify-center transition duration-200 hover:bg-[#a1784f]">
+              <i class="fas fa-folder-open mr-2"></i>Browse..
+            </label>
+            <input type="file" id="logo-upload" class="hidden"
+              onchange="document.getElementById('file-name-display').value = this.files[0]?.name || '';" />
+          </div>
+        </div>
+        <!-- Group 2 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex flex-col w-full md:col-span-2">
+            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">Website:</label>
+            <div class="flex items-center border rounded px-3 py-2 w-full">
+              <i class="fa fa-globe mr-2 text-gray-500"></i>
+              <input id="business-field" type="text" class="w-full outline-none" placeholder="Website" />
+            </div>
+          </div>
+          <div class="flex flex-col w-full md:col-span-2">
+            <label for="business-phone" class="mb-1 text-sm font-medium text-gray-700">Business contact number:</label>
+            <div class="flex items-center border rounded px-3 py-2 w-full">
+              <i class="fa fa-phone mr-2 text-gray-500"></i>
+              <input id="business-phone" type="text" class="w-full outline-none" placeholder="Business Phone" />
+            </div>
+          </div>
+          <div class="flex flex-col w-full md:col-span-2">
+            <label for="business-phone" class="mb-1 text-sm font-medium text-gray-700">Alternate contact number:</label>
+            <div class="flex items-center border rounded px-3 py-2 w-full">
+              <i class="fa fa-phone mr-2 text-gray-500"></i>
+              <input id="business-phone" type="text" class="w-full outline-none"
+                placeholder="Alternate contact number:" />
+            </div>
+          </div>
+
+          <div class="flex flex-col w-full md:col-span-2">
+            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">Country:*</label>
+            <div class="flex items-center border rounded px-3 py-2 w-full">
+              <i class="fa fa-globe mr-2 text-gray-500"></i>
+              <input id="business-field" type="text" class="w-full outline-none" placeholder="Website" />
+            </div>
+          </div>
+
+
+          <div class="flex flex-col w-full md:col-span-2">
+            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">State:*</label>
+            <div class="flex items-center border rounded px-3 py-2 w-full">
+              <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
+              <input id="business-field" type="text" class="w-full outline-none" />
+            </div>
+          </div>
+          <div class="flex flex-col w-full md:col-span-2">
+            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">City:*</label>
+            <div class="flex items-center border rounded px-3 py-2 w-full">
+              <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
+              <input id="business-field" type="text" class="w-full outline-none" />
+            </div>
+          </div>
+          <div class="flex flex-col w-full md:col-span-2">
+            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">Zip Code:*</label>
+            <div class="flex items-center border rounded px-3 py-2 w-full">
+              <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
+              <input id="business-field" type="text" class="w-full outline-none" />
+            </div>
+          </div>
+          <div class="flex flex-col w-full md:col-span-2">
+            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">Landmark:*</label>
+            <div class="flex items-center border rounded px-3 py-2 w-full">
+              <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
+              <input id="business-field" type="text" class="w-full outline-none" />
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col w-full md:col-span-2">
+          <label for="currency" class="mb-1 text-sm font-medium text-gray-700">Time zone:*</label>
+          <div class="flex items-center border rounded px-3 py-2 w-full">
+            <i class="fas fa-clock mr-2 text-gray-500"></i>
+            <select id="currency" class="currency-select w-full outline-none border-none focus:ring-0">
+              <option value="">Select Currency</option>
+              <option value="AFN">Africa/Abidjan</option>
+              <option value="ALL">Africa/Accra</option>
+              <option value="DZD">Africa/Addis_Ababa</option>
+              <option value="USD">Africa/Algiers</option>
+              <option value="EUR">Africa/Asmara</option>
+              <option value="AOA">Africa/Bamako</option>
+              <option value="ARS">Africa/Bangui</option>
+
+            </select>
+          </div>
+        </div>
+        <!-- Submit -->
+        <div class="flex justify-end mt-8 space-x-4">
+          <button
+            class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-3 px-6 rounded-xl shadow-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 transition duration-300">
+            Previous
+          </button>
+          <button
+            class="bg-[#2184BE] text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:bg-[#9DC8E2] focus:outline-none focus:ring-2 transition duration-300">
+            Next
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</body>
+
+</html>
