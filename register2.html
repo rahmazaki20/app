@@ -80,12 +80,12 @@
 <div class="flex flex-col items-center mt-[100px] px-4">
   <div class="w-full max-w-4xl bg-white shadow-md rounded-xl p-6 space-y-6">
       <!-- Heading -->
-       <div class="flex flex-col items-center text-center bg-white">
-      <h1 class="text-lg md:text-xl font-bold text-[#cc9D6A]">Aston. ERP</h1>
-      <h2 class="text-sm font-medium text-[#cc9D6A]">Register and Get Started in minutes</h2>
+       <div class="flex flex-col items-center text-center">
+      <h2 class="text-lg font-bold text-[#cc9D6A]">Aston. ERP</h2>
+      <h3 class="text-sm font-medium text-[#cc9D6A]">Register and Get Started in minutes</h3>
     </div>
       <!-- Group 1 -->
-    <div class="flex flex-col md:flex-row justify-between items-stretch gap-4">
+    <div class="flex flex-col md:flex-row justify-between gap-4">
       <button class="w-full md:w-1/3 p-[14px] bg-[#2184BE] text-black text-sm font-normal rounded-md text-left">
         1. Business
       </button>
@@ -96,7 +96,7 @@
         3. Owner
       </button>
     </div>
-      <form class="p-6 bg-white rounded-lg shadow-md max-w-4xl mx-auto">
+      <form class="p-6 max-w-4xl mx-auto">
         <h3 class="text-[21px] mb-4 font-normal">Business Details</h3>
 
 
@@ -118,10 +118,9 @@
             </div>
           </div>
 
-          <!-- Currency Dropdown Styled Like Other Fields -->
           <div class="flex flex-col w-full md:col-span-2">
             <label for="currency" class="mb-1 text-sm font-medium text-gray-700">Currency:*</label>
-            <div class="flex items-center border rounded px-3 py-2 w-full">
+            <div class="flex items-center text-gray-400 border rounded px-3 py-2 w-full">
               <i class="fas fa-money-bill-alt mr-2 text-gray-500"></i>
               <select id="currency" class="currency-select w-full outline-none border-none focus:ring-0">
                 <option value="">Select Currency</option>
@@ -175,10 +174,10 @@
               </select>
             </div>
           </div>
-        </div>
-        <!-- Upload Logo Field Styled Like Other Inputs -->
+      
+    
         <div class="flex flex-col w-full md:col-span-2">
-          <label for="logo-upload" class="mb-1 text-sm font-medium text-gray-700 mt-4">Upload Logo:</label>
+          <label for="logo-upload" class="mb-1 text-sm font-medium text-gray-700">Upload Logo:</label>
           <div class="flex items-center border rounded px-3 py-2 w-full">
             <i class="fas fa-image mr-2 text-gray-500"></i>
             <input class="w-full outline-none text-sm text-gray-700 bg-transparent cursor-default" type="text"
@@ -191,13 +190,13 @@
               onchange="document.getElementById('file-name-display').value = this.files[0]?.name || '';" />
           </div>
         </div>
-        <!-- Group 2 -->
+        
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="flex flex-col w-full md:col-span-2">
-            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">Website:</label>
+            <label for="Website" class="mb-1 text-sm font-medium text-gray-700">Website:</label>
             <div class="flex items-center border rounded px-3 py-2 w-full">
               <i class="fa fa-globe mr-2 text-gray-500"></i>
-              <input id="business-field" type="text" class="w-full outline-none" placeholder="Website" />
+              <input id="Website" type="text" class="w-full outline-none" placeholder="Website" />
             </div>
           </div>
           <div class="flex flex-col w-full md:col-span-2">
@@ -208,57 +207,57 @@
             </div>
           </div>
           <div class="flex flex-col w-full md:col-span-2">
-            <label for="business-phone" class="mb-1 text-sm font-medium text-gray-700">Alternate contact number:</label>
+            <label for="business-Alternate-phone" class="mb-1 text-sm font-medium text-gray-700">Alternate contact number:</label>
             <div class="flex items-center border rounded px-3 py-2 w-full">
               <i class="fa fa-phone mr-2 text-gray-500"></i>
-              <input id="business-phone" type="text" class="w-full outline-none"
+              <input id="business-Alternate-phone" type="text" class="w-full outline-none"
                 placeholder="Alternate contact number:" />
             </div>
           </div>
 
           <div class="flex flex-col w-full md:col-span-2">
-            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">Country:*</label>
+            <label for="Country" class="mb-1 text-sm font-medium text-gray-700">Country:*</label>
             <div class="flex items-center border rounded px-3 py-2 w-full">
               <i class="fa fa-globe mr-2 text-gray-500"></i>
-              <input id="business-field" type="text" class="w-full outline-none" placeholder="Website" />
+              <input id="Country" type="text" class="w-full outline-none" placeholder="Country" />
             </div>
           </div>
 
 
           <div class="flex flex-col w-full md:col-span-2">
-            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">State:*</label>
+            <label for="State" class="mb-1 text-sm font-medium text-gray-700">State:*</label>
             <div class="flex items-center border rounded px-3 py-2 w-full">
               <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
-              <input id="business-field" type="text" class="w-full outline-none" />
+              <input id="State" type="text" class="w-full outline-none" />
             </div>
           </div>
           <div class="flex flex-col w-full md:col-span-2">
-            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">City:*</label>
+            <label for="City" class="mb-1 text-sm font-medium text-gray-700">City:*</label>
             <div class="flex items-center border rounded px-3 py-2 w-full">
-              <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
-              <input id="business-field" type="text" class="w-full outline-none" />
+             <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
+              <input id="City" type="text" class="w-full outline-none" />
             </div>
           </div>
           <div class="flex flex-col w-full md:col-span-2">
-            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">Zip Code:*</label>
+            <label for="Zip-Code" class="mb-1 text-sm font-medium text-gray-700">Zip Code:*</label>
             <div class="flex items-center border rounded px-3 py-2 w-full">
               <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
-              <input id="business-field" type="text" class="w-full outline-none" />
+              <input id="Zip-Code" type="text" class="w-full outline-none" />
             </div>
           </div>
           <div class="flex flex-col w-full md:col-span-2">
-            <label for="business-field" class="mb-1 text-sm font-medium text-gray-700">Landmark:*</label>
+            <label for="Landmark" class="mb-1 text-sm font-medium text-gray-700">Landmark:*</label>
             <div class="flex items-center border rounded px-3 py-2 w-full">
               <i class="fas fa-map-marker-alt mr-2 text-gray-500"></i>
-              <input id="business-field" type="text" class="w-full outline-none" />
+              <input id="Landmark" type="text" class="w-full outline-none" />
             </div>
           </div>
         </div>
         <div class="flex flex-col w-full md:col-span-2">
-          <label for="currency" class="mb-1 text-sm font-medium text-gray-700">Time zone:*</label>
-          <div class="flex items-center border rounded px-3 py-2 w-full">
+          <label for="Time-zone" class="mb-1 text-sm font-medium text-gray-700">Time zone:*</label>
+          <div class="flex items-center border rounded px-3 py-2 w-full text-gray-400">
             <i class="fas fa-clock mr-2 text-gray-500"></i>
-            <select id="currency" class="currency-select w-full outline-none border-none focus:ring-0">
+            <select id="Time-zone" class=" w-full outline-none border-none focus:ring-0">
               <option value="">Select Currency</option>
               <option value="AFN">Africa/Abidjan</option>
               <option value="ALL">Africa/Accra</option>
@@ -282,6 +281,7 @@
             Next
           </button>
         </div>
+          </div>
       </form>
 
     </div>

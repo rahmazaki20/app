@@ -11,8 +11,11 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #10162E;
+  
       /* background-color: #17223f; */
+    }
+    body{
+          background-color: #10162E;
     }
   </style>
 </head>
@@ -45,7 +48,7 @@
           </div>
         </div>
         <button
-          class="px-4 py-2 border-2 border-white text-white rounded-md hover:bg-white hover:text-blue-400 font-semibold transition duration-300">Login</button>
+          class="px-4 py-2 border-2 border-white text-white rounded-md hover: hover:text-blue-400 font-semibold transition duration-300">Login</button>
         <button
           class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 font-semibold transition duration-300">Register</button>
       </div>
@@ -68,46 +71,46 @@
         <option class="bg-blue-400 text-white" value="fr">FR</option>
       </select>
       <button
-        class="w-full px-4 py-2 border-2 border-white text-white rounded-md hover:bg-white hover:text-blue-400 font-semibold transition duration-300">Login</button>
+        class="w-full px-4 py-2 border-2 border-white text-white rounded-md hover: hover:text-blue-400 font-semibold transition duration-300">Login</button>
       <button
         class="w-full px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 font-semibold transition duration-300">Register</button>
     </div>
   </nav>
   <!-- LOGIN -->
   <div class="flex justify-center items-center min-h-screen px-4 ">
-    <div class="w-full max-w-md md:max-w-lg">
+    <div class="w-full max-w-md md:max-w-lg ">
       <!-- Login Form -->
       <form id="login-form"
-        class="p-5 md:p-6 rounded-2xl transition-all duration-200 bg-white shadow-xl ring-1 ring-gray-200 flex flex-col gap-4">
+        class="bg-white p-5 md:p-6 rounded-2xl transition-all duration-200  shadow-xl ring-1 ring-gray-200 flex flex-col gap-4">
 
         <!-- Heading -->
-        <div class="flex items-center flex-col text-center bg-white">
-          <h1 class="text-lg md:text-xl font-bold text-[#cc9D6A] bg-white">Welcome Back</h1>
-          <h2 class="text-sm font-medium text-[#cc9D6A] bg-white">Login to your Aston. ERP</h2>
+        <div class="flex items-center flex-col text-center ">
+          <h1 class="text-lg md:text-xl font-bold text-[#cc9D6A] ">Welcome Back</h1>
+          <h2 class="text-sm font-medium text-[#cc9D6A] ">Login to your Aston. ERP</h2>
         </div>
         <!-- Username -->
     
-<label class="block space-y-1 bg-white">
-  <span class="text-xs md:text-sm font-normal text-black bg-white">Username</span>
+<label class="block space-y-1 ">
+  <span class="text-xs md:text-sm font-normal text-black ">Username</span>
   <input
-    class="border border-[#D1D5DA] outline-none h-12 bg-transparent rounded-lg px-3 font-medium text-black placeholder:text-gray-500 placeholder:font-medium w-full bg-white
+    class="border border-[#D1D5DA] outline-none h-12 bg-transparent rounded-lg px-3 font-medium text-black placeholder:text-gray-500 placeholder:font-medium w-full 
     focus:border-[#cc9D6A] focus:ring-[#cc9D6A] focus:ring-2 focus:ring-offset-2 transition-all duration-200"
     name="username" required autofocus placeholder="Username" type="text" />
 </label>
    <!-- password -->
-<label class="block space-y-1 relative mt-4 bg-white">
-  <div class="flex justify-between items-center bg-white">
-    <span class="text-xs md:text-sm font-normal text-black bg-white">Password</span>
+<label class="block space-y-1 relative mt-4 ">
+  <div class="flex justify-between items-center ">
+    <span class="text-xs md:text-sm font-normal text-black ">Password</span>
     <a href="#" class="p-2 text-xs md:text-sm font-medium text-[rgba(16,22,46,1)] inline-block bg-clip-text">Forgot
       your password?</a>
   </div>
    
   <input
-    class="border border-[#D1D5DA] outline-none h-12 bg-transparent rounded-lg px-3 font-medium text-black placeholder:text-gray-500 placeholder:font-medium w-full bg-white
+    class="border border-[#D1D5DA] outline-none h-12 bg-transparent rounded-lg px-3 font-medium text-black placeholder:text-gray-500 placeholder:font-medium w-full 
     focus:border-[#cc9D6A] focus:ring-[#cc9D6A] focus:ring-2  focus:ring-offset-2 transition-all duration-200"
     id="password" type="password" name="password" placeholder="Password" required />
-  <button type="button" id="show_hide_icon" class="absolute top-[48px] right-2 bg-white">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 bg-white" viewBox="0 0 24 24" stroke-width="1.5"
+  <button type="button" id="show_hide_icon" class="absolute top-[48px] right-2 ">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 " viewBox="0 0 24 24" stroke-width="1.5"
       stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
@@ -118,11 +121,11 @@
 
         <!-- Remember Me -->
         <div>
-          <label class="flex items-center gap-2 cursor-pointer relative bg-white">
+          <label class="flex items-center gap-2 cursor-pointer relative ">
             <input type="checkbox" name="remember" class="
             peer h-5 w-5 shrink-0 rounded-sm appearance-none border border-gray-300
             checked:border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2
-            transition-all duration-200 bg-white 
+            transition-all duration-200  
           ">
             <svg class="
             absolute left-0 top-0 h-5 w-5 pointer-events-none hidden peer-checked:block
@@ -131,7 +134,7 @@
               stroke-linecap="round" stroke-linejoin="round">
               <polyline points="20 6 9 17 4 12"></polyline>
             </svg>
-            <span class="bg-white text-xs md:text-sm font-normal text-black mt-[0.2rem]">Remember me</span>
+            <span class=" text-xs md:text-sm font-normal text-black mt-[0.2rem]">Remember me</span>
           </label>
         </div>
 
@@ -141,11 +144,11 @@
           Login
         </button>
         <!-- Register Link -->
-        <div class="flex items-center flex-col mt-4 bg-white">
-          <a href="register.php" class="text-sm font-medium  mt-2 bg-white">
+        <div class="flex items-center flex-col mt-4 ">
+          <a href="register.php" class="text-sm font-medium  mt-2 ">
             Not yet registered?
             <span
-              class="text-sm font-medium bg-gradient-to-r from-indigo-500 to-blue-500 inline-block text-transparent bg-clip-text hover:text-[#467BF5] hover:underline bg-white">
+              class="text-sm font-medium bg-gradient-to-r from-indigo-500 to-blue-500 inline-block text-transparent bg-clip-text hover:text-[#467BF5] hover:underline ">
               Register now
             </span>
           </a>
